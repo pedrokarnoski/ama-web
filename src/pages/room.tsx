@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom"
 
 import amaLogo from '../assets/ama-logo.svg';
 
-import { ArrowRight, ArrowUp, Share2 } from "lucide-react";
+import { ArrowRight, Share2 } from "lucide-react";
+
+import { Message } from "../components/message";
 
 export function Room() {
   const { roomID } = useParams()
@@ -67,13 +69,7 @@ export function Room() {
       </form>
 
       <ol className="list-decimal list-outside px-3 space-y-8">
-        <li className="ml-4 leading-relaxed text-zinc-100">
-          Teste
-          <button type="button" className="mt-3 flex items-center gap-2 text-sm font-medium text-orange-400 hover:text-orange-500">
-            <ArrowUp className="size-4" />
-            Curtir pergunta
-          </button>
-        </li>
+        <Message text="Teste" amountOfReactions={2} answered />
       </ol>
     </div >
   )
